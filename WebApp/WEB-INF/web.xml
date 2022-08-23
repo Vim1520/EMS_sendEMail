@@ -1,0 +1,136 @@
+<web-app>
+  <display-name>Login Demo Using j_security_check</display-name>
+  <servlet>
+<servlet-name>Login</servlet-name>
+<servlet-class>Login</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>newDet</servlet-name>
+<servlet-class>newDet</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>Edit</servlet-name>
+<servlet-class>Edit</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>Redirect</servlet-name>
+<servlet-class>Redirect</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>Chpass</servlet-name>
+<servlet-class>Chpass</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>Logout</servlet-name>
+<servlet-class>Logout</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>Exp</servlet-name>
+<servlet-class>Exp</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>Delete</servlet-name>
+<servlet-class>Delete</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>CRUD</servlet-name>
+<servlet-class>CRUD</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>SearchID</servlet-name>
+<servlet-class>SearchID</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Login</servlet-name>
+<url-pattern>/Login</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>Chpass</servlet-name>
+<url-pattern>/Chpass</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>Exp</servlet-name>
+<url-pattern>/Exp</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>SearchID</servlet-name>
+<url-pattern>/SearchID</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>newDet</servlet-name>
+<url-pattern>/newDet</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>Edit</servlet-name>
+<url-pattern>/Edit</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>CRUD</servlet-name>
+<url-pattern>/CRUD</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>Delete</servlet-name>
+<url-pattern>/Delete</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>Logout</servlet-name>
+<url-pattern>/Logout</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>Redirect</servlet-name>
+<url-pattern>/Redirect</url-pattern>
+</servlet-mapping>
+
+  <!--Defines Security Constraint -->
+    <security-constraint>
+        <display-name>JSP Demo Constraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>cp</web-resource-name>
+            <description/>
+            <url-pattern>/*</url-pattern>
+		 <http-method>GET</http-method>
+		<http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>1</role-name>
+            <role-name>2</role-name>
+            <role-name>3</role-name>
+        </auth-constraint>
+    </security-constraint>
+<!--Defines Login Config -->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>MyRealm</realm-name>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+<!--Defines Security Role -->
+    <security-role>
+        <description/>
+        <role-name>1</role-name>
+        <role-name>2</role-name>
+        <role-name>3</role-name>
+    </security-role>
+</web-app>
